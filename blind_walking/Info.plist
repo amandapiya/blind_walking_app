@@ -57,6 +57,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Access to the camera is required for functionality</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This is optional but good for tutorial</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -16,11 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBe-vG-TzP">
-                                <rect key="frame" x="184" y="287" width="49" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBe-vG-TzP">
+                                <rect key="frame" x="184" y="447" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Record Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-94-bWG">
-                                <rect key="frame" x="156" y="258" width="103" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Livestream Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-94-bWG">
+                                <rect key="frame" x="141" y="418" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,14 +30,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="WBe-vG-TzP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BIH-GQ-Gk2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WBe-vG-TzP" secondAttribute="bottom" constant="398" id="IMt-OA-7eK"/>
-                            <constraint firstItem="WBe-vG-TzP" firstAttribute="centerX" secondItem="Qab-94-bWG" secondAttribute="centerX" id="P6G-An-CCI"/>
-                            <constraint firstItem="WBe-vG-TzP" firstAttribute="top" secondItem="Qab-94-bWG" secondAttribute="bottom" constant="8" id="rCN-TR-06B"/>
-                            <constraint firstItem="WBe-vG-TzP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1A-5c-MpB"/>
-                            <constraint firstItem="WBe-vG-TzP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="183" id="vau-u9-jIQ"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="view" destination="WBe-vG-TzP" id="WOt-3i-8fj"/>
