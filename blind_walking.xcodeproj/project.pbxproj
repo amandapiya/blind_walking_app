@@ -15,6 +15,9 @@
 		6E2DC1BA25B35BB1006BE494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2DC1B825B35BB1006BE494 /* LaunchScreen.storyboard */; };
 		6E2DC1C525B35BB1006BE494 /* blind_walkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2DC1C425B35BB1006BE494 /* blind_walkingTests.swift */; };
 		6E2DC1D025B35BB1006BE494 /* blind_walkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2DC1CF25B35BB1006BE494 /* blind_walkingUITests.swift */; };
+		7467E4B5357DCE2E09BDD7B8 /* libPods-blind_walking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C53E5C55A7EFB7D19C868ED /* libPods-blind_walking.a */; };
+		9E29D57D7CFB6078E3A5BF35 /* libPods-blind_walking-blind_walkingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B23FFB3EC90AF8E3E79547 /* libPods-blind_walking-blind_walkingUITests.a */; };
+		CA062D806464C3B2E7237811 /* libPods-blind_walkingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02C270B877D4A1AD40038F /* libPods-blind_walkingTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		361962D093515952FA8DF736 /* Pods-blind_walking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blind_walking.debug.xcconfig"; path = "Target Support Files/Pods-blind_walking/Pods-blind_walking.debug.xcconfig"; sourceTree = "<group>"; };
+		5C53E5C55A7EFB7D19C868ED /* libPods-blind_walking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-blind_walking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2DC1AA25B35BB0006BE494 /* blind_walking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blind_walking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2DC1AD25B35BB0006BE494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E2DC1AF25B35BB0006BE494 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		6E2DC1CB25B35BB1006BE494 /* blind_walkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blind_walkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2DC1CF25B35BB1006BE494 /* blind_walkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blind_walkingUITests.swift; sourceTree = "<group>"; };
 		6E2DC1D125B35BB1006BE494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79080B3EF1661CFFC0B272E7 /* Pods-blind_walking-blind_walkingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blind_walking-blind_walkingUITests.release.xcconfig"; path = "Target Support Files/Pods-blind_walking-blind_walkingUITests/Pods-blind_walking-blind_walkingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9121AAA844F7BC96F20D5A74 /* Pods-blind_walking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blind_walking.release.xcconfig"; path = "Target Support Files/Pods-blind_walking/Pods-blind_walking.release.xcconfig"; sourceTree = "<group>"; };
+		9E02C270B877D4A1AD40038F /* libPods-blind_walkingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-blind_walkingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89577B2D7EF39A181F9D4C5 /* Pods-blind_walking-blind_walkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blind_walking-blind_walkingUITests.debug.xcconfig"; path = "Target Support Files/Pods-blind_walking-blind_walkingUITests/Pods-blind_walking-blind_walkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9B23FFB3EC90AF8E3E79547 /* libPods-blind_walking-blind_walkingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-blind_walking-blind_walkingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8D6C947BAF94B8F6ADE058 /* Pods-blind_walkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blind_walkingTests.release.xcconfig"; path = "Target Support Files/Pods-blind_walkingTests/Pods-blind_walkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		E84FE8123AEAF93F9624768E /* Pods-blind_walkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blind_walkingTests.debug.xcconfig"; path = "Target Support Files/Pods-blind_walkingTests/Pods-blind_walkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7467E4B5357DCE2E09BDD7B8 /* libPods-blind_walking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA062D806464C3B2E7237811 /* libPods-blind_walkingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E29D57D7CFB6078E3A5BF35 /* libPods-blind_walking-blind_walkingUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				6E2DC1C325B35BB1006BE494 /* blind_walkingTests */,
 				6E2DC1CE25B35BB1006BE494 /* blind_walkingUITests */,
 				6E2DC1AB25B35BB0006BE494 /* Products */,
+				CA7AAF7D7008A909785900E5 /* Pods */,
+				7DE06640289DA027DBEE19C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,30 @@
 			path = blind_walkingUITests;
 			sourceTree = "<group>";
 		};
+		7DE06640289DA027DBEE19C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C53E5C55A7EFB7D19C868ED /* libPods-blind_walking.a */,
+				B9B23FFB3EC90AF8E3E79547 /* libPods-blind_walking-blind_walkingUITests.a */,
+				9E02C270B877D4A1AD40038F /* libPods-blind_walkingTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA7AAF7D7008A909785900E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				361962D093515952FA8DF736 /* Pods-blind_walking.debug.xcconfig */,
+				9121AAA844F7BC96F20D5A74 /* Pods-blind_walking.release.xcconfig */,
+				B89577B2D7EF39A181F9D4C5 /* Pods-blind_walking-blind_walkingUITests.debug.xcconfig */,
+				79080B3EF1661CFFC0B272E7 /* Pods-blind_walking-blind_walkingUITests.release.xcconfig */,
+				E84FE8123AEAF93F9624768E /* Pods-blind_walkingTests.debug.xcconfig */,
+				CD8D6C947BAF94B8F6ADE058 /* Pods-blind_walkingTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E2DC1D425B35BB1006BE494 /* Build configuration list for PBXNativeTarget "blind_walking" */;
 			buildPhases = (
+				32D65064918CDD45A71F9035 /* [CP] Check Pods Manifest.lock */,
 				6E2DC1A625B35BB0006BE494 /* Sources */,
 				6E2DC1A725B35BB0006BE494 /* Frameworks */,
 				6E2DC1A825B35BB0006BE494 /* Resources */,
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E2DC1D725B35BB1006BE494 /* Build configuration list for PBXNativeTarget "blind_walkingTests" */;
 			buildPhases = (
+				0691C17F0DF805B39D175749 /* [CP] Check Pods Manifest.lock */,
 				6E2DC1BC25B35BB1006BE494 /* Sources */,
 				6E2DC1BD25B35BB1006BE494 /* Frameworks */,
 				6E2DC1BE25B35BB1006BE494 /* Resources */,
@@ -170,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E2DC1DA25B35BB1006BE494 /* Build configuration list for PBXNativeTarget "blind_walkingUITests" */;
 			buildPhases = (
+				E41D75D8EC3885F48B3BC5A8 /* [CP] Check Pods Manifest.lock */,
 				6E2DC1C725B35BB1006BE494 /* Sources */,
 				6E2DC1C825B35BB1006BE494 /* Frameworks */,
 				6E2DC1C925B35BB1006BE494 /* Resources */,
@@ -252,6 +296,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0691C17F0DF805B39D175749 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blind_walkingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32D65064918CDD45A71F9035 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blind_walking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E41D75D8EC3885F48B3BC5A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blind_walking-blind_walkingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E2DC1A625B35BB0006BE494 /* Sources */ = {
@@ -433,6 +546,7 @@
 		};
 		6E2DC1D525B35BB1006BE494 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 361962D093515952FA8DF736 /* Pods-blind_walking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +565,7 @@
 		};
 		6E2DC1D625B35BB1006BE494 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9121AAA844F7BC96F20D5A74 /* Pods-blind_walking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +584,7 @@
 		};
 		6E2DC1D825B35BB1006BE494 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E84FE8123AEAF93F9624768E /* Pods-blind_walkingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +606,7 @@
 		};
 		6E2DC1D925B35BB1006BE494 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD8D6C947BAF94B8F6ADE058 /* Pods-blind_walkingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +628,7 @@
 		};
 		6E2DC1DB25B35BB1006BE494 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89577B2D7EF39A181F9D4C5 /* Pods-blind_walking-blind_walkingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +648,7 @@
 		};
 		6E2DC1DC25B35BB1006BE494 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79080B3EF1661CFFC0B272E7 /* Pods-blind_walking-blind_walkingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

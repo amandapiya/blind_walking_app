@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/libbambuser-ios/libbambuser-ios-xcframeworks.sh
+${PODS_ROOT}/libbambuser-ios/Frameworks/BambuserBroadcaster.xcframework
+${PODS_ROOT}/libbambuser-ios/Frameworks/BambuserPlayer.xcframework

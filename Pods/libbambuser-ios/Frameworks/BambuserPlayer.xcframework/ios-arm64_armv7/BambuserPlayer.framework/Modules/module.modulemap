@@ -1,0 +1,6 @@
+framework module BambuserPlayer {
+  umbrella header "BambuserPlayer.h"
+
+  export *
+  module * { export * }
+}

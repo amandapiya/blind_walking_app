@@ -1,0 +1,6 @@
+framework module BambuserBroadcaster {
+  umbrella header "BambuserBroadcaster.h"
+
+  export *
+  module * { export * }
+}
