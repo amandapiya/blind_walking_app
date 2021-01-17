@@ -75,7 +75,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             debugPrint("unable to get image from sample buffer")
             return
         }
-        print("  did receive image frame");
+        print("did receive image frame");
         // process image here
         
         //MARK: CVPixel to UIImage
@@ -88,15 +88,40 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let imageData = newImage.jpegData(compressionQuality: 1)
         let imageBase64String = imageData?.base64EncodedString()
 
+        /*
+         
+         var requestUrl = URLComponents(string: "http://34.94.227.134:5000/")!
+         
+         requestUrl.queryItems = [
+             URLQueryItem(name: "img", value: imageBase64String)
+         ]
 
-        // Create URL         let url = !
-        guard let requestUrl = URL(string: "http://34.94.227.134:5000/") else { fatalError() }
+         requestUrl.percentEncodedQuery = requestUrl.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+         guard let newURL = requestUrl.url else { return <#default value#> }
+         
+         
+         guard let request = URLRequest(url: newURL) else{
+             debugPrint("url composition failed")
+             return
+         }
+         //
+         */
+        //var request = URLRequest(string: "http://34.94.227.134:5000/")
+        
+        // Create URL
+        var requestUrl = URLComponents(string: "http://34.94.227.134:5000/")!
 
-        
-        
         // Create URL Request
-        var request = URLRequest(url: requestUrl)
+        
+        requestUrl.queryItems = [
+            URLQueryItem(name: "img", value: imageBase64String)
+        ]
 
+        guard let requestUrl2 = requestUrl.url else { fatalError() }
+
+        
+        var request = URLRequest(url: requestUrl2)
+        
         // Specify HTTP Method to use
         request.httpMethod = "GET"
 
