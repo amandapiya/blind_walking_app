@@ -10,7 +10,6 @@
 		0D5013B425B4A01D0086701F /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 1B5314AE245E1F8A009985F0 /* AppDelegate.swift */; };
 		0D5013B525B4A01D0086701F /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 1B5314B0245E1F8A009985F0 /* SceneDelegate.swift */; };
 		0D5013B625B4A01D0086701F /* ViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = 1B5314B2245E1F8A009985F0 /* ViewController.swift */; };
-		0D5013BE25B4ADB10086701F /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D5013BD25B4ADB00086701F /* 0.mp3 */; };
 		1B5314AF245E1F8A009985F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5314AE245E1F8A009985F0 /* AppDelegate.swift */; };
 		1B5314B1245E1F8A009985F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5314B0245E1F8A009985F0 /* SceneDelegate.swift */; };
 		1B5314B3245E1F8A009985F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5314B2245E1F8A009985F0 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D5013BD25B4ADB00086701F /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0.mp3; path = ../../../Downloads/0.mp3; sourceTree = "<group>"; };
 		1B5314AB245E1F8A009985F0 /* ProcessingCameraFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProcessingCameraFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5314AE245E1F8A009985F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B5314B0245E1F8A009985F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +40,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D5013AF25B49ED10086701F /* Sounds */ = {
+		0D5013CE25B4D4790086701F /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				0D5013BD25B4ADB00086701F /* 0.mp3 */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0D5013CF25B4D4840086701F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -53,7 +57,8 @@
 		1B5314A2245E1F8A009985F0 = {
 			isa = PBXGroup;
 			children = (
-				0D5013AF25B49ED10086701F /* Sounds */,
+				0D5013CF25B4D4840086701F /* Sounds */,
+				0D5013CE25B4D4790086701F /* New Group */,
 				1B5314AD245E1F8A009985F0 /* ProcessingCameraFeed */,
 				1B5314AC245E1F8A009985F0 /* Products */,
 			);
@@ -139,7 +144,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5013BE25B4ADB10086701F /* 0.mp3 in Resources */,
 				0D5013B425B4A01D0086701F /* AppDelegate.swift in Resources */,
 				0D5013B525B4A01D0086701F /* SceneDelegate.swift in Resources */,
 				0D5013B625B4A01D0086701F /* ViewController.swift in Resources */,
