@@ -39,8 +39,19 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             debugPrint("unable to get image from sample buffer")
             return
         }
-        print("did receive image frame")
-        // process image here
+        print(frame, "did receive image frame")
+        /*
+        let message = Message(message: text)
+        let postRequest = rest_api_func(endpoint: "messages")
+        postRequest.save(message, completion: { result in
+            switch result{
+            case .sucess(let message):
+                print("sent to API")
+            case .failure(let error):
+                print("An error occured \(error)")
+            }
+        })
+        */
     }
 
     private func addCameraInput() {

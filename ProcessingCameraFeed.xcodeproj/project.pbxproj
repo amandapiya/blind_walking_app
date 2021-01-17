@@ -13,6 +13,7 @@
 		1B5314B6245E1F8A009985F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B5314B4245E1F8A009985F0 /* Main.storyboard */; };
 		1B5314B8245E1F8B009985F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5314B7245E1F8B009985F0 /* Assets.xcassets */; };
 		1B5314BB245E1F8B009985F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B5314B9245E1F8B009985F0 /* LaunchScreen.storyboard */; };
+		6ED87A9F25B3C9D200871219 /* rest_api_func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED87A9E25B3C9D200871219 /* rest_api_func.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		1B5314B7245E1F8B009985F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B5314BA245E1F8B009985F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B5314BC245E1F8B009985F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ED87A9E25B3C9D200871219 /* rest_api_func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rest_api_func.swift; sourceTree = "<group>"; };
+		6ED87AA225B3CD0E00871219 /* ProcessingCameraFeed-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProcessingCameraFeed-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		1B5314AD245E1F8A009985F0 /* ProcessingCameraFeed */ = {
 			isa = PBXGroup;
 			children = (
+				6ED87A9E25B3C9D200871219 /* rest_api_func.swift */,
 				1B5314AE245E1F8A009985F0 /* AppDelegate.swift */,
 				1B5314B0245E1F8A009985F0 /* SceneDelegate.swift */,
 				1B5314B2245E1F8A009985F0 /* ViewController.swift */,
@@ -63,6 +67,7 @@
 				1B5314B7245E1F8B009985F0 /* Assets.xcassets */,
 				1B5314B9245E1F8B009985F0 /* LaunchScreen.storyboard */,
 				1B5314BC245E1F8B009985F0 /* Info.plist */,
+				6ED87AA225B3CD0E00871219 /* ProcessingCameraFeed-Bridging-Header.h */,
 			);
 			path = ProcessingCameraFeed;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 				TargetAttributes = {
 					1B5314AA245E1F8A009985F0 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -138,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED87A9F25B3C9D200871219 /* rest_api_func.swift in Sources */,
 				1B5314B3245E1F8A009985F0 /* ViewController.swift in Sources */,
 				1B5314AF245E1F8A009985F0 /* AppDelegate.swift in Sources */,
 				1B5314B1245E1F8A009985F0 /* SceneDelegate.swift in Sources */,
@@ -284,15 +291,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 44H9U6N2S5;
+				DEVELOPMENT_TEAM = K2AF4X49PG;
 				INFOPLIST_FILE = ProcessingCameraFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anuragajwani.ProcessingCameraFeed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amandapiya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProcessingCameraFeed/ProcessingCameraFeed-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,15 +314,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 44H9U6N2S5;
+				DEVELOPMENT_TEAM = K2AF4X49PG;
 				INFOPLIST_FILE = ProcessingCameraFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anuragajwani.ProcessingCameraFeed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amandapiya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProcessingCameraFeed/ProcessingCameraFeed-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
