@@ -30,6 +30,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var blindSound = [AVAudioPlayer?](repeating:nil, count:SOUNDS)
     var sound_being_used = 0;
     
+    func base64urlToBase64(base64url: String) -> String {
+        var base64 = base64url
+            .replacingOccurrences(of: "-", with: "+")
+            .replacingOccurrences(of: "_", with: "/")
+        if base64.count % 4 != 0 {
+            base64.append(String(repeating: "=", count: 4 - base64.count % 4))
+        }
+        return base64
+    }
+    
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
        let size = image.size
 
@@ -120,42 +130,47 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let newImage = resizeImage(image: image,targetSize: size)
         
         let imageData = newImage.jpegData(compressionQuality: 1)
-        let imageBase64String = imageData?.base64EncodedString()
+        let imageBase64UrlString = imageData?.base64EncodedString()
         
+        let imageBase64String = base64urlToBase64(base64url: imageBase64UrlString!)
         
-//        // Create URL         let url = !
-//        guard let requestUrl = URL(string: "http://34.94.227.134:5000/") else { fatalError() }
-//
-//
-//
-//        // Create URL Request
-//        var request = URLRequest(url: requestUrl)
-//
-//        // Specify HTTP Method to use
-//        request.httpMethod = "GET"
-//
-//        // Send HTTP Request
-//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//
-//            // Check if Error took place
-//            if let error = error {
-//                print("Error took place \(error)")
-//                return
-//            }
-//
-//            // Read HTTP Response Status code
-//            if let response = response as? HTTPURLResponse {
-//                print("Response HTTP Status code: \(response.statusCode)")
-//            }
-//
-//            // Convert HTTP Response Data to a simple String
-//            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-//                print("Response data string:\n \(dataString)")
-//            }
-//
-//        }
-//
-//        task.resume()
+        // Create URL
+        var requestUrl = URLComponents(string: "http://34.94.227.134:5000/")!
+         
+        // Create URL Request
+        requestUrl.queryItems = [
+        URLQueryItem(name: "img", value: imageBase64String)
+        ]
+         
+        guard let requestUrl2 = requestUrl.url else { fatalError() }
+                
+        var request = URLRequest(url: requestUrl2)
+                
+        // Specify HTTP Method to use
+        request.httpMethod = "GET"
+         
+        // Send HTTP Request
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    
+        // Check if Error took place
+        if let error = error {
+            print("Error took place \(error)")
+                return
+        }
+                    
+        // Read HTTP Response Status code
+        if let response = response as? HTTPURLResponse {
+            print("Response HTTP Status code: \(response.statusCode)")
+        }
+                    
+        // Convert HTTP Response Data to a simple String
+        if let data = data, let dataString = String(data: data, encoding: .utf8) {
+            print("Response data string:\n \(dataString)")
+        }
+                    
+    }
+        task.resume()
+
         let dataString = ".5 (12, 42)" // mock API endpoint
         
         let oldSound = sound_being_used;
