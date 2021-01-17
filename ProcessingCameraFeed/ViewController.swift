@@ -8,8 +8,37 @@
 
 import UIKit
 import AVFoundation
+import VideoToolbox
+import ARKit
+import VideoToolbox
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+       let size = image.size
+
+       let widthRatio  = targetSize.width  / size.width
+       let heightRatio = targetSize.height / size.height
+
+       // Figure out what our orientation is, and use that to form the rectangle
+       var newSize: CGSize
+       if(widthRatio > heightRatio) {
+           newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+       } else {
+           newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+       }
+
+       // This is the rect that we've calculated out and this is what is actually used below
+       let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+       // Actually do the resizing to the rect using the ImageContext stuff
+       UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+       image.draw(in: rect)
+       let newImage = UIGraphicsGetImageFromCurrentImageContext()
+       UIGraphicsEndImageContext()
+
+       return newImage!
+   }
     
     private let captureSession = AVCaptureSession()
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
@@ -39,8 +68,19 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             debugPrint("unable to get image from sample buffer")
             return
         }
-        print("did receive image frame")
+        print("  did receive image frame");
         // process image here
+        
+        //MARK: CVPixel to UIImage
+        var image = UIImage(ciImage: CIImage(cvPixelBuffer: frame))
+        
+        //MARK: UIIMage to Base64
+        let size = CGSize(width: image.size.width/6, height:image.size.height/6)
+        let newImage = resizeImage(image: image,targetSize: size)
+        
+        let imageData = newImage.jpegData(compressionQuality: 1)
+        let imageBase64String = imageData?.base64EncodedString()
+
     }
 
     private func addCameraInput() {
@@ -59,4 +99,5 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.captureSession.addOutput(self.videoOutput)
     }
 }
+
 
