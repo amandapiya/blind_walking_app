@@ -11,6 +11,9 @@ import AVFoundation
 import VideoToolbox
 import ARKit
 import VideoToolbox
+import AudioToolbox
+import Foundation
+import AudioUnit
 
 /*
 import PlaygroundSupport
@@ -18,8 +21,14 @@ import PlaygroundSupport
 PlaygroundPage.current.needsIndefiniteExecution = true
  */
 
+let SOUNDS = 88;
+
+
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    var blindSound = [AVAudioPlayer?](repeating:nil, count:SOUNDS)
+    var sound_being_used = 0;
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
        let size = image.size
@@ -61,6 +70,30 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.addPreviewLayer()
         self.addVideoOutput()
         self.captureSession.startRunning()
+        
+        for i in 0..<SOUNDS {
+            
+            guard let url = Bundle.main.url(forResource: String(0), withExtension: "mp3") else { return }
+
+                 do {
+                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                    try AVAudioSession.sharedInstance().setActive(true)
+
+                    /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+                    player?.prepareToPlay();
+                    /* iOS 10 and earlier require the following line:
+                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+
+                    //player?.play()
+                    blindSound[i] = player;
+                    
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+        
+        }
+        blindSound[sound_being_used]?.play();
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,6 +101,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.previewLayer.frame = self.view.bounds
     }
     
+    var player: AVAudioPlayer? = nil;
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
@@ -87,45 +121,72 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         let imageData = newImage.jpegData(compressionQuality: 1)
         let imageBase64String = imageData?.base64EncodedString()
-
-
-        // Create URL         let url = !
-        guard let requestUrl = URL(string: "http://34.94.227.134:5000/") else { fatalError() }
-
         
         
-        // Create URL Request
-        var request = URLRequest(url: requestUrl)
+//        // Create URL         let url = !
+//        guard let requestUrl = URL(string: "http://34.94.227.134:5000/") else { fatalError() }
+//
+//
+//
+//        // Create URL Request
+//        var request = URLRequest(url: requestUrl)
+//
+//        // Specify HTTP Method to use
+//        request.httpMethod = "GET"
+//
+//        // Send HTTP Request
+//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+//
+//            // Check if Error took place
+//            if let error = error {
+//                print("Error took place \(error)")
+//                return
+//            }
+//
+//            // Read HTTP Response Status code
+//            if let response = response as? HTTPURLResponse {
+//                print("Response HTTP Status code: \(response.statusCode)")
+//            }
+//
+//            // Convert HTTP Response Data to a simple String
+//            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+//                print("Response data string:\n \(dataString)")
+//            }
+//
+//        }
+//
+//        task.resume()
+        let dataString = ".5 (12, 42)" // mock API endpoint
+        
+        let oldSound = sound_being_used;
+        sound_being_used = (oldSound + 1) % SOUNDS; // get_sound_index(dataString: dataString)
+        print("Playing sound!!!!!");
+        
+        
 
-        // Specify HTTP Method to use
-        request.httpMethod = "GET"
-
-        // Send HTTP Request
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            // Check if Error took place
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            
-            // Read HTTP Response Status code
-            if let response = response as? HTTPURLResponse {
-                print("Response HTTP Status code: \(response.statusCode)")
-            }
-            
-            // Convert HTTP Response Data to a simple String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string:\n \(dataString)")
-            }
-            
+        blindSound[sound_being_used]?.play();//atTime:
+                                            // -blindSound[sound_being_used]!.currentTime)
+        let seconds = 0.06
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+        
+            self.blindSound[oldSound]?.pause();
+            self.blindSound[oldSound]?.currentTime = 0;
+            self.blindSound[oldSound]?.prepareToPlay();
         }
         
-        task.resume()
-        
-        
-    }
+        do {
+            usleep(100)
+        }
 
+//
+//
+    }
+    
+    private func get_sound_index(dataString: String) -> Int{
+        return 0 //TODO actual math
+    }
+    
     private func addCameraInput() {
         let device = AVCaptureDevice.default(for: .video)!
         let cameraInput = try! AVCaptureDeviceInput(device: device)
