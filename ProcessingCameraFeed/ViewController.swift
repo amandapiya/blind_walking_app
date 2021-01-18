@@ -85,31 +85,31 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.addVideoOutput()
         self.captureSession.startRunning()
         
-        for i in 0..<SOUNDS * BUFFERS_PER_SOUND {
-            //rake noise stops
-            guard let url = Bundle.main.url(forResource: String(i), withExtension: "mp3") else { return }
-
-                 do {
-                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                    try AVAudioSession.sharedInstance().setActive(true)
-
-                    /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-                    player?.prepareToPlay();
-                    /* iOS 10 and earlier require the following line:
-                    player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-
-                    //player?.play()
-                    blindSound[i] = player;
+        for i in 0..<SOUNDS * BUFFERS_PER_SOUND{
                     
-                } catch let error {
-                    print(error.localizedDescription)
+                    guard let url = Bundle.main.url(forResource: String(Int(i / BUFFERS_PER_SOUND)), withExtension: "mp3") else { return }
+
+                         do {
+                            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                            try AVAudioSession.sharedInstance().setActive(true)
+
+                            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+                            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+                            player?.prepareToPlay();
+                            /* iOS 10 and earlier require the following line:
+                            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+
+                            //player?.play()
+                            blindSound[i] = player;
+                
+                        } catch let error {
+                            print(error.localizedDescription)
+                        }
+                
                 }
-        
-        }
-        blindSound[sound_being_used]?.play();
-    }
-    
+                blindSound[sound_being_used]?.play();
+            }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.previewLayer.frame = self.view.bounds
