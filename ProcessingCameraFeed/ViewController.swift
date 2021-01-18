@@ -121,55 +121,41 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
         print("  did receive image frame");
         // process image here
-        
         //MARK: CVPixel to UIImage
-        var image = UIImage(ciImage: CIImage(cvPixelBuffer: frame))
-        
-        //MARK: UIIMage to Base64
-        let size = CGSize(width: image.size.width/6, height:image.size.height/6)
-        let newImage = resizeImage(image: image,targetSize: size)
-        
-        let imageData = newImage.jpegData(compressionQuality: 1)
-        let imageBase64UrlString = imageData?.base64EncodedString()
-        
-        let imageBase64String = base64urlToBase64(base64url: imageBase64UrlString!)
-        
-        // Create URL
-        var requestUrl = URLComponents(string: "http://34.94.227.134:5000/")!
-         
-        // Create URL Request
-        requestUrl.queryItems = [
-        URLQueryItem(name: "img", value: imageBase64String)
-        ]
-         
-        guard let requestUrl2 = requestUrl.url else { fatalError() }
-                
-        var request = URLRequest(url: requestUrl2)
-                
-        // Specify HTTP Method to use
-        request.httpMethod = "GET"
-         
-        // Send HTTP Request
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    
-        // Check if Error took place
-        if let error = error {
-            print("Error took place \(error)")
-                return
-        }
-                    
-        // Read HTTP Response Status code
-        if let response = response as? HTTPURLResponse {
-            print("Response HTTP Status code: \(response.statusCode)")
-        }
-                    
-        // Convert HTTP Response Data to a simple String
-        if let data = data, let dataString = String(data: data, encoding: .utf8) {
-            print("Response data string:\n \(dataString)")
-        }
-                    
-    }
-        task.resume()
+       var image = UIImage(ciImage: CIImage(cvPixelBuffer: frame))
+       
+       //MARK: UIIMage to Base64
+       let size = CGSize(width: image.size.width/6, height:image.size.height/6)
+       let newImage = resizeImage(image: image,targetSize: size)
+       
+       let imageData = newImage.jpegData(compressionQuality: 1)
+       let imageBase64UrlString = imageData?.base64EncodedString(options:.lineLength64Characters)
+       
+       let imageBase64String = imageBase64UrlString!; //base64urlToBase64(base64url: imageBase64UrlString!)
+       
+       
+       let json: [String: Any] = ["img": imageBase64String]
+
+       let jsonData = try? JSONSerialization.data(withJSONObject: json)
+
+       // create post request
+       let url = URL(string: "http://34.125.240.78:5000/sendvideo")!
+       var request = URLRequest(url: url)
+       request.httpMethod = "POST"
+
+       // insert json data to the request
+       request.httpBody = jsonData
+
+       let task = URLSession.shared.dataTask(with: request) { data, response, error in
+           guard let data = data, error == nil else {
+               print(error?.localizedDescription ?? "No data")
+               return
+           }
+           self.dataString = String(data: data, encoding: .utf8)!
+           
+       }
+
+               task.resume()
 
         let dataString = ".5 (12, 42)" // mock API endpoint
         
