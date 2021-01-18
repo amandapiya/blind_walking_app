@@ -105,7 +105,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                         } catch let error {
                             print(error.localizedDescription)
                         }
-                
                 }
                 blindSound[sound_being_used]?.play();
             }
@@ -123,6 +122,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             debugPrint("unable to get image from sample buffer")
             return
         }
+        
         print("  did receive image frame");
         // process image here
         
@@ -144,7 +144,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
         // create post request
-        let url = URL(string: "http://34.125.240.78:5000/sendvideo")!
+        let url = URL(string: "http://34.94.227.134:5000/sendvideo")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
@@ -161,15 +161,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
 
         task.resume()
-
-
+ 
             //changed rake noise
         let oldSound = sound_being_used;
         print(dataString);
         if(dataString != "Hello World"){
         sound_being_used = get_sound_index(dataString: dataString)
         } else {
-            sound_being_used += 1;
+            sound_being_used += Int.random(in: -5...5);
+            sound_being_used += SOUNDS * BUFFERS_PER_SOUND;
             sound_being_used %= SOUNDS * BUFFERS_PER_SOUND;
         }
         print("Playing sound!!!!!");
@@ -189,10 +189,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                     self.blindSound[oldSound]?.currentTime = 0;
                     self.blindSound[oldSound]?.prepareToPlay();
                 }
+        
+        
+        do {
+            usleep(200)
+        }
                 
-                do {
-                    usleep(100)
-                }
+        
 
 
 //
